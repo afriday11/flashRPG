@@ -23,17 +23,35 @@
     RPGFactory *factory = [[RPGFactory alloc]init];
     self.tiles = [factory tiles];
     self.character = [factory character];
-    self.boss = [factory boss];
+//    self.boss = [factory boss];
 
-    self.currentPosition = CGPointMake(0, 0);
+    self.currentPosition = 0;
     [self updateCharacterStatsForArmor:nil withWeapons:nil withHealthEffect:0];
 //    [self updateFlashcards:nil answer:nil reward:NO];
     
     [self updateTile];
-    [self updateButtons];
+//    [self updateButtons];
 
     
     
+}
+
+- (void) updateTile
+{
+//    RPGTile *tileModel = [[self.tiles objectAtIndex:self.currentPosition.x]objectAtIndex:self.currentPosition.y];
+    RPGTile *tileModel = [self.tiles objectAtIndex:self.currentPosition];
+    NSLog(@"@%",tileModel.answer);
+    self.StoryText.text = tileModel.story;
+    self.HPStat.text = [NSString stringWithFormat:@"%i", self.character.health];
+    self.AttackStat.text = [NSString stringWithFormat:@"%i", self.character.attack];
+    self.WeaponNameStat.text = self.character.weapon.name;
+    self.ArmorNameStat.text = self.character.armor.name;
+    self.QuestionText.text = tileModel.flashcard.question;
+    
+    [self.Answer1Button setTitle:tileModel.flashcard.answer1 forState:UIControlStateNormal];
+    [self.Answer2Button setTitle:tileModel.flashcard.answer2 forState:UIControlStateNormal];
+    [self.Answer3Button setTitle:tileModel.flashcard.answer3 forState:UIControlStateNormal];
+    [self.Answer4Button setTitle:tileModel.flashcard.answer4 forState:UIControlStateNormal];
 }
 
 -(BOOL)tilesExistsAtPoint:(CGPoint)point
@@ -48,30 +66,6 @@
     };
 };
 
--(void) updateButtons
-{
-    self.EastButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x + 1, self.currentPosition.y)];
-    self.WestButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x - 1, self.currentPosition.y)];
-    self.NorthButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x, self.currentPosition.y + 1)];
-    self.SouthButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x, self.currentPosition.y - 1)];
-};
-
-- (void) updateTile
-{
-    RPGTile *tileModel = [[self.tiles objectAtIndex:self.currentPosition.x]objectAtIndex:self.currentPosition.y];
-    self.StoryText.text = tileModel.story;
-    self.HPStat.text = [NSString stringWithFormat:@"%i", self.character.health];
-    self.AttackStat.text = [NSString stringWithFormat:@"%i", self.character.attack];
-    self.WeaponNameStat.text = self.character.weapon.name;
-    self.ArmorNameStat.text = self.character.armor.name;
-    self.QuestionText.text = tileModel.flashcard.question;
-    
-    [self.Answer1Button setTitle:tileModel.flashcard.answer1 forState:UIControlStateNormal];
-    [self.Answer2Button setTitle:tileModel.flashcard.answer2 forState:UIControlStateNormal];
-    [self.Answer3Button setTitle:tileModel.flashcard.answer3 forState:UIControlStateNormal];
-    [self.Answer4Button setTitle:tileModel.flashcard.answer4 forState:UIControlStateNormal];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -82,7 +76,7 @@
 
 //Button pushing is all done here!
 - (IBAction)Answer1Button:(id)sender {
-    RPGTile *tile = [[self.tiles objectAtIndex:self.currentPosition.x] objectAtIndex:self.currentPosition.y];
+    RPGTile *tile = [self.tiles objectAtIndex:self.currentPosition];
     [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthEffect];
     
 //    if (self.QuestionText == self.)
@@ -97,7 +91,7 @@
 }
 
 - (IBAction)Answer2Button:(id)sender {
-    RPGTile *tile = [[self.tiles objectAtIndex:self.currentPosition.x] objectAtIndex:self.currentPosition.y];
+    RPGTile *tile = [self.tiles objectAtIndex:self.currentPosition];
 //    [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthEffect];
 }
 
@@ -107,33 +101,7 @@
 - (IBAction)Answer4Button:(id)sender {
 }
 
-- (IBAction)MoveNorthButton:(id)sender
-{
-    self.currentPosition = CGPointMake(self.currentPosition.x, self.currentPosition.y + 1);
-    [self updateButtons];
-    [self updateTile];
-}
 
-- (IBAction)MoveEastButton:(id)sender
-{
-    self.currentPosition = CGPointMake(self.currentPosition.x + 1, self.currentPosition.y);
-    [self updateButtons];
-    [self updateTile];
-}
-
-- (IBAction)MoveSouthButton:(id)sender
-{
-    self.currentPosition = CGPointMake(self.currentPosition.x, self.currentPosition.y - 1);
-    [self updateButtons];
-    [self updateTile];
-}
-
-- (IBAction)MoveWestButton:(id)sender
-{
-    self.currentPosition = CGPointMake(self.currentPosition.x - 1, self.currentPosition.y);
-    [self updateButtons];
-    [self updateTile];
-}
 
 - (IBAction)fleeButtonPressed:(id)sender {
 }
@@ -161,18 +129,47 @@
     
 }
 
-//-(void)updateFlashcards: (RPGFlashCard *)question answer:(RPGFlashCard *)answer reward:(BOOL)rewardEffect
-//{
-//    if (
-//};
 
 @end
 
 
 
+//-(void) updateButtons
+//{
+//    self.EastButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x + 1, self.currentPosition.y)];
+//    self.WestButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x - 1, self.currentPosition.y)];
+//    self.NorthButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x, self.currentPosition.y + 1)];
+//    self.SouthButton.hidden = [self tilesExistsAtPoint:CGPointMake(self.currentPosition.x, self.currentPosition.y - 1)];
+//};
 
 
-
+//- (IBAction)MoveNorthButton:(id)sender
+//{
+//    self.currentPosition = CGPointMake(self.currentPosition.x, self.currentPosition.y + 1);
+//    [self updateButtons];
+//    [self updateTile];
+//}
+//
+//- (IBAction)MoveEastButton:(id)sender
+//{
+//    self.currentPosition = CGPointMake(self.currentPosition.x + 1, self.currentPosition.y);
+//    [self updateButtons];
+//    [self updateTile];
+//}
+//
+//- (IBAction)MoveSouthButton:(id)sender
+//{
+//    self.currentPosition = CGPointMake(self.currentPosition.x, self.currentPosition.y - 1);
+//    [self updateButtons];
+//    [self updateTile];
+//}
+//
+//- (IBAction)MoveWestButton:(id)sender
+//{
+//    self.currentPosition = CGPointMake(self.currentPosition.x - 1, self.currentPosition.y);
+//    [self updateButtons];
+//    [self updateTile];
+//}
 
 
 

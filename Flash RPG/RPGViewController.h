@@ -13,7 +13,7 @@
 
 @interface RPGViewController : UIViewController
 //instance variables
-@property (nonatomic) CGPoint currentPosition;
+@property (nonatomic) int currentPosition;
 @property (strong, nonatomic) NSArray *tiles;
 @property (strong, nonatomic) RPGCharacter *character;
 @property (strong, nonatomic) RPGBoss *boss;
@@ -35,10 +35,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *Answer3Button;
 @property (strong, nonatomic) IBOutlet UIButton *Answer4Button;
 
-@property (strong, nonatomic) IBOutlet UIButton *NorthButton;
-@property (strong, nonatomic) IBOutlet UIButton *EastButton;
-@property (strong, nonatomic) IBOutlet UIButton *SouthButton;
-@property (strong, nonatomic) IBOutlet UIButton *WestButton;
+//@property (strong, nonatomic) IBOutlet UIButton *NorthButton;
+//@property (strong, nonatomic) IBOutlet UIButton *EastButton;
+//@property (strong, nonatomic) IBOutlet UIButton *SouthButton;
+//@property (strong, nonatomic) IBOutlet UIButton *WestButton;
 
 
 //IBActions
@@ -47,10 +47,10 @@
 - (IBAction)Answer3Button:(id)sender;
 - (IBAction)Answer4Button:(id)sender;
 
-- (IBAction)MoveNorthButton:(id)sender;
-- (IBAction)MoveEastButton:(id)sender;
-- (IBAction)MoveSouthButton:(id)sender;
-- (IBAction)MoveWestButton:(id)sender;
+//- (IBAction)MoveNorthButton:(id)sender;
+//- (IBAction)MoveEastButton:(id)sender;
+//- (IBAction)MoveSouthButton:(id)sender;
+//- (IBAction)MoveWestButton:(id)sender;
 
 - (IBAction)fleeButtonPressed:(id)sender;
 @end

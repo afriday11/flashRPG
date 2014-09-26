@@ -10,11 +10,5 @@
 
 @implementation RPGTile
 
-NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                            question, @"fangxiang",
-                            answer, @"direction",
-                            category, @"getting around"
-                            , nil];
-
 
 @end
