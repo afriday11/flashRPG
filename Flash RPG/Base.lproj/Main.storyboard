@@ -135,48 +135,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IHi-uU-Xt7">
                                 <rect key="frame" x="5" y="416" width="311" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ind-jA-1eD">
-                                        <rect key="frame" x="135" y="14" width="39" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="North">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="MoveNorthButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xgF-7w-n8n"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWA-1U-lj0">
-                                        <rect key="frame" x="187" y="40" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="East">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="MoveEastButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="D79-U3-h7B"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-cs-aMR">
-                                        <rect key="frame" x="135" y="67" width="41" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="South">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="MoveSouthButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pPx-0s-VCd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS6-15-JX5">
-                                        <rect key="frame" x="90" y="40" width="34" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="West">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="MoveWestButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="493-e8-NuE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjG-e3-RqZ">
                                 <rect key="frame" x="267" y="533" width="33" height="30"/>
@@ -198,13 +156,9 @@
                         <outlet property="Answer4Button" destination="Is3-hG-whI" id="9jV-rB-cjP"/>
                         <outlet property="ArmorNameStat" destination="KKs-cd-TN8" id="d2u-wf-Gx0"/>
                         <outlet property="AttackStat" destination="I2H-f3-r8S" id="AGb-oG-ASE"/>
-                        <outlet property="EastButton" destination="EWA-1U-lj0" id="W3b-Ir-t1y"/>
                         <outlet property="HPStat" destination="AYF-wz-U5m" id="Cjy-mv-iSG"/>
-                        <outlet property="NorthButton" destination="Ind-jA-1eD" id="jgz-TC-1pS"/>
                         <outlet property="QuestionText" destination="vLz-zg-rsc" id="7qb-xN-OB9"/>
-                        <outlet property="SouthButton" destination="L9c-cs-aMR" id="hHG-HK-ZbZ"/>
                         <outlet property="WeaponNameStat" destination="bdl-4d-gvF" id="3lK-rY-RO4"/>
-                        <outlet property="WestButton" destination="CS6-15-JX5" id="t7g-aj-rfV"/>
                     </connections>
                 </viewController>
                 <view contentMode="scaleToFill" id="Gf2-Ul-Bv4">

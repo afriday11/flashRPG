@@ -14,8 +14,13 @@
 
 @interface RPGFactory : NSObject
 
+
+-(NSMutableArray *)flashcards;
 -(NSArray *)tiles;
--(NSArray *)flashcards;
+
+
+//unused methods
+
 -(RPGCharacter *)character;
 
 

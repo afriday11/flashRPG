@@ -29,7 +29,6 @@
 		15F4F9A919B57493008AA515 /* Flash_RPGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4F9A819B57493008AA515 /* Flash_RPGTests.m */; };
 		15F4F9B519B59C25008AA515 /* RPGTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4F9B419B59C25008AA515 /* RPGTile.m */; };
 		15F4F9B819B59F34008AA515 /* RPGFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4F9B719B59F34008AA515 /* RPGFactory.m */; };
-		15F4F9BC19B5AD30008AA515 /* RPGQuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4F9BB19B5AD30008AA515 /* RPGQuestionFactory.m */; };
 		15F6454A19D4456C006ED67A /* RPGAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6454919D4456C006ED67A /* RPGAnswer.m */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +77,6 @@
 		15F4F9B419B59C25008AA515 /* RPGTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPGTile.m; sourceTree = "<group>"; };
 		15F4F9B619B59F34008AA515 /* RPGFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPGFactory.h; sourceTree = "<group>"; };
 		15F4F9B719B59F34008AA515 /* RPGFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPGFactory.m; sourceTree = "<group>"; };
-		15F4F9BA19B5AD30008AA515 /* RPGQuestionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPGQuestionFactory.h; sourceTree = "<group>"; };
-		15F4F9BB19B5AD30008AA515 /* RPGQuestionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPGQuestionFactory.m; sourceTree = "<group>"; };
 		15F6454819D4456C006ED67A /* RPGAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPGAnswer.h; sourceTree = "<group>"; };
 		15F6454919D4456C006ED67A /* RPGAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPGAnswer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,8 +222,6 @@
 			children = (
 				15F4F9B619B59F34008AA515 /* RPGFactory.h */,
 				15F4F9B719B59F34008AA515 /* RPGFactory.m */,
-				15F4F9BA19B5AD30008AA515 /* RPGQuestionFactory.h */,
-				15F4F9BB19B5AD30008AA515 /* RPGQuestionFactory.m */,
 				15E85AC919D3C8B700946CE7 /* flashcardData.xml */,
 			);
 			name = Factory;
@@ -331,7 +326,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15F4F9BC19B5AD30008AA515 /* RPGQuestionFactory.m in Sources */,
 				15F4F98E19B57492008AA515 /* RPGAppDelegate.m in Sources */,
 				153C650F19B806F800C931DE /* RPGCharacter.m in Sources */,
 				15F6454A19D4456C006ED67A /* RPGAnswer.m in Sources */,

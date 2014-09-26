@@ -16,7 +16,13 @@
 
 @property (strong, nonatomic) NSString *story;
 @property (strong, nonatomic) NSString *question;
-@property (strong, nonatomic) NSString *answer;
+@property (strong, nonatomic) NSString *correctAnswer;
+@property (strong, nonatomic) NSString *incorrectAnswer1;
+@property (strong, nonatomic) NSString *incorrectAnswer2;
+@property (strong, nonatomic) NSString *incorrectAnswer3;
+
+
+
 @property (strong, nonatomic) RPGWeapon *weapon;
 @property (strong, nonatomic) RPGArmor *armor;
 @property (nonatomic) int healthEffect;

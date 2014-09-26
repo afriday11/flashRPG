@@ -23,42 +23,82 @@
     //question, correct answer, incorrect answer x3, bonus, penalty
     
     NSArray *data = @[
+                      
+        //en = english
+        //zh = chinese (zhongwen is mandarin word for chinese)
+        //py = pinyin (chinese romanization)
+        //ct = category of words
+        
         @{
-            @"en" : @"Engish word 1",
-            @"zh" : @"Chinese word 1"
+            @"en" : @"ankle",
+            @"zh" : @"脚踝",
+            @"py" : @"jiao3huai2",
+            @"ct" : @"body"
         },
         @{
-            @"en" : @"Engish word 2",
-            @"zh" : @"Chinese word 2"
-        },
+            @"en" : @"neck",
+            @"zh" : @"颈",
+            @"py" : @"jing3",
+            @"ct" : @"body"
+            },
         @{
-            @"en" : @"Engish word 3",
-            @"zh" : @"Chinese word 3"
-        },
+            @"en" : @"shoulder",
+            @"zh" : @"肩",
+            @"py" : @"jian1",
+            @"ct" : @"body"
+            },
         @{
-            @"en" : @"Engish word 4",
-            @"zh" : @"Chinese word 4"
-        },
+            @"en" : @"head",
+            @"zh" : @"头",
+            @"py" : @"tou2",
+            @"ct" : @"body"
+            },
+        
+        //the below data is doubled
         @{
-            @"en" : @"Engish word 5",
-            @"zh" : @"Chinese word 5"
-        }
+            @"en" : @"ankle",
+            @"zh" : @"脚踝",
+            @"py" : @"jiao3huai2",
+            @"ct" : @"body"
+            },
+        @{
+            @"en" : @"neck",
+            @"zh" : @"颈",
+            @"py" : @"jing3",
+            @"ct" : @"body"
+            },
+        @{
+            @"en" : @"shoulder",
+            @"zh" : @"肩",
+            @"py" : @"jian1",
+            @"ct" : @"body"
+            },
+        @{
+            @"en" : @"head",
+            @"zh" : @"头",
+            @"py" : @"tou2",
+            @"ct" : @"body"
+            },
+
     ];
     
+
+NSMutableArray *tilesArray = [[NSMutableArray alloc] init];
     
-    NSMutableArray *tilesArray = [[NSMutableArray alloc] init];
+for (int i = 0; i < data.count; i++)
+{
+    RPGTile *tile = [[RPGTile alloc] init];
+    tile.question = data[i][@"zh"];
+    tile.correctAnswer = data[i][@"en"];
+    tile.incorrectAnswer1 = data[1][@"en"];
+    tile.incorrectAnswer2 = data[2][@"en"];
+    tile.incorrectAnswer3 = data[3][@"en"];
     
-    for (int i = 0; i < 4; i++) {
-        RPGTile *tile = [[RPGTile alloc] init];
-        tile.question = data[i][@"en"];
-        tile.answer = data[i][@"zh"];
-        
-        [tilesArray addObject:tile];
-        //[tilesArray addObject:tile.answer];
-        
-        //NSLog(tilesArray);
-    }
-    
+    [tilesArray addObject:tile];
+//  [tilesArray addObject:tile.answer];
+}
+
+//    NSLog(@"%@", tilesArray[0]);
     return tilesArray;
     
 };

@@ -23,60 +23,43 @@
     RPGFactory *factory = [[RPGFactory alloc]init];
     self.tiles = [factory tiles];
     self.character = [factory character];
-//    self.boss = [factory boss];
+    self.boss = [factory boss];
+    
 
     self.currentPosition = 0;
     [self updateCharacterStatsForArmor:nil withWeapons:nil withHealthEffect:0];
-//    [self updateFlashcards:nil answer:nil reward:NO];
     
     [self updateTile];
-//    [self updateButtons];
-
-    
-    
 }
 
 - (void) updateTile
 {
-/////   RPGTile *tileModel = [[self.tiles objectAtIndex:self.currentPosition.x]objectAtIndex:self.currentPosition.y];
     RPGTile *tileModel = [self.tiles objectAtIndex:self.currentPosition];
-    NSLog(@"@%",tileModel.answer);
-    self.StoryText.text = tileModel.story;
+    NSLog(@"%@",tileModel.question);
+    self.QuestionText.text = tileModel.question;
+    
+    //character healh and related stuff in the yellow section
     self.HPStat.text = [NSString stringWithFormat:@"%i", self.character.health];
     self.AttackStat.text = [NSString stringWithFormat:@"%i", self.character.attack];
     self.WeaponNameStat.text = self.character.weapon.name;
     self.ArmorNameStat.text = self.character.armor.name;
-    self.QuestionText.text = tileModel.flashcard.question;
-    
-    [self.Answer1Button setTitle:tileModel.flashcard.answer1 forState:UIControlStateNormal];
-    [self.Answer2Button setTitle:tileModel.flashcard.answer2 forState:UIControlStateNormal];
-    [self.Answer3Button setTitle:tileModel.flashcard.answer3 forState:UIControlStateNormal];
-    [self.Answer4Button setTitle:tileModel.flashcard.answer4 forState:UIControlStateNormal];
-}
 
--(BOOL)tilesExistsAtPoint:(CGPoint)point
-{
-    if (point.y >= 0 && point.x >= 0 && point.x < [self.tiles count] && point.y < [[self.tiles objectAtIndex:point.x] count])
-    {
-        return NO;
-    }
-    else
-    {
-        return YES;
-    };
-};
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //answer buttons ~ v0.3 needs to have these be randomized
+    [self.Answer1Button setTitle:tileModel.correctAnswer forState:UIControlStateNormal];
+    [self.Answer2Button setTitle:tileModel.incorrectAnswer1 forState:UIControlStateNormal];
+    [self.Answer3Button setTitle:tileModel.incorrectAnswer2 forState:UIControlStateNormal];
+    [self.Answer4Button setTitle:tileModel.incorrectAnswer3 forState:UIControlStateNormal];
 }
 
 
 
 //Button pushing is all done here!
 - (IBAction)Answer1Button:(id)sender {
+    //this is our tile
     RPGTile *tile = [self.tiles objectAtIndex:self.currentPosition];
+    
+    //then we need to get the health effect if this is correct or incorrect
+    //should this be organized to decouple it from Answer1Button?
     [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthEffect];
     
 //    if (self.QuestionText == self.)
@@ -92,10 +75,12 @@
 
 - (IBAction)Answer2Button:(id)sender {
     RPGTile *tile = [self.tiles objectAtIndex:self.currentPosition];
+    
 //    [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthEffect];
 }
 
 - (IBAction)Answer3Button:(id)sender {
+    
 }
 
 - (IBAction)Answer4Button:(id)sender {
@@ -129,6 +114,13 @@
     
 }
 
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end
 
@@ -170,6 +162,20 @@
 //    [self updateButtons];
 //    [self updateTile];
 //}
+
+
+//-(BOOL)tilesExistsAtPoint:(CGPoint)point
+//{
+//    if (point.y >= 0 && point.x >= 0 && point.x < [self.tiles count] && point.y < [[self.tiles objectAtIndex:point.x] count])
+//    {
+//        return NO;
+//    }
+//    else
+//    {
+//        return YES;
+//    };
+//};
+
 
 
 
