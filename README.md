@@ -15,11 +15,11 @@ Gameplay Details:
 The code structure (as of now) is as follows:
 
 Each level is an RPGTile and contains a:
-	⁃	question
-	⁃	correct answer
-	⁃	3 incorrect answers
-	⁃	bonus (for correct answer)
-	⁃	penalty (for incorrect answers)
+	1:	question
+	2:	correct answer
+	3:	incorrect answers x3
+	4:	bonus (for correct answer)
+	5:	penalty (for incorrect answers)
 
 When the game is started the viewController’s viewDidLoad method runs the tile generating method [factory tiles], which has the factory method create a set of tiles for the level.
 
