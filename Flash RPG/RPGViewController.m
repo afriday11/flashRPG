@@ -38,7 +38,7 @@
 
 - (void) updateTile
 {
-//    RPGTile *tileModel = [[self.tiles objectAtIndex:self.currentPosition.x]objectAtIndex:self.currentPosition.y];
+/////   RPGTile *tileModel = [[self.tiles objectAtIndex:self.currentPosition.x]objectAtIndex:self.currentPosition.y];
     RPGTile *tileModel = [self.tiles objectAtIndex:self.currentPosition];
     NSLog(@"@%",tileModel.answer);
     self.StoryText.text = tileModel.story;
